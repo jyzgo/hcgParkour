@@ -10,7 +10,7 @@ public class MoveController: MonoBehaviour
     public float normalSpeed = 0f;
     public float slowSpeed = 0;
     VehicleController _vc = null;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         _vc = other.GetComponent<VehicleController>();
         if(_vc != null)

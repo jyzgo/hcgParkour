@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class VehicleController : MonoBehaviour
     void Update()
     {
         Vector3 currentPosition = transform.position;
-        transform.position = currentPosition + new Vector3(-speed/100 ,0 , 0);
+        transform.position = currentPosition + new Vector3(-speed * Time.deltaTime , 0, 0);
     }
 
     public void ChangeVehicle(int vehicleType)
