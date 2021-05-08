@@ -1,21 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeaController : MonoBehaviour
+public class SeaController :MoveController
 {
-    public int seaSpeed;
-    public int seaSlowSpeed;
-    void OnTriggerStay(Collider other)
+    private void Awake()
     {
-        if(other.gameObject.tag == "Sea")
-        {
-            other.GetComponent<VehicleController>().speed = seaSpeed;
-        }
-        else
-        {
-            other.GetComponent<VehicleController>().speed = seaSlowSpeed;
-        }
-
+        moveTag = ParkourConf.SEA_TAG;
+        normalSpeed = ParkourConf.SEA_NOARMAL_SPEED;
+        slowSpeed = ParkourConf.SEA_SLOW_SPEED;
     }
 }
