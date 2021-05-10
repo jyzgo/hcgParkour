@@ -8,6 +8,7 @@ public class TrackMgr : MonoBehaviour
     private void Awake()
     {
         current = this;
+        startPos = generateTrans.localPosition;
     }
 
     public GameObject[] trackPrefabs;
@@ -18,6 +19,7 @@ public class TrackMgr : MonoBehaviour
 
 
     readonly Vector3 offset = new Vector3(-2, 0, 0);
+    Vector3 startPos;
 
     int platCount = 0;
     public void OnPlatformDestory()
@@ -26,7 +28,7 @@ public class TrackMgr : MonoBehaviour
         int index = Random.Range(0, 3);
         var curprefab = trackPrefabs[index];
         var gb = Instantiate<GameObject>(curprefab,trackRoot.transform);
-        gb.transform.localPosition = generateTrans.localPosition + offset * platCount;
+        gb.transform.localPosition = startPos + offset * platCount;
 
     }
 }
