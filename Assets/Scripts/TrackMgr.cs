@@ -13,6 +13,8 @@ public class TrackMgr : MonoBehaviour
 
     public GameObject[] trackPrefabs;
 
+    public GameObject endPrefab;
+
     public GameObject trackRoot;
 
     public Transform generateTrans;
